@@ -23,7 +23,6 @@ export function Hero() {
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
-
       {/* Floating Elements */}
       <motion.div
         style={{ y }}
@@ -33,7 +32,6 @@ export function Hero() {
         style={{ y: useTransform(scrollYProgress, [0, 1], [0, 30]) }}
         className="absolute bottom-20 right-10 w-32 h-32 bg-[#EE801A]/10 rounded-full blur-2xl"
       />
-
       <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 80 }}
@@ -53,7 +51,7 @@ export function Hero() {
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
                 transition={{ duration: 1, delay: 1.5 }}
-                className="absolute bottom-2 left-0 w-full h-2 bg-[#EE801A] origin-left"
+                className="absolute bottom-1 left-0 w-full h-2 bg-[#EE801A] origin-left"
               />
             </span>
           </motion.h1>
@@ -113,7 +111,7 @@ export function Hero() {
             </div>
           </motion.div>
         </motion.div>
-      </div>
+      </div>{" "}
     </section>
   );
 }
