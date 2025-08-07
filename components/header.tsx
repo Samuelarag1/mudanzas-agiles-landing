@@ -17,14 +17,14 @@ export function Header() {
       <header className="fixed w-full bg-white/90 backdrop-blur-md z-50 border-b border-gray-100">
         <div className="bg-gray-900 text-white py-2 text-sm">
           <div className="container mx-auto px-4 flex justify-between items-center">
-            <div className="flex items-center space-x-6">
+            <div className="flex items-center md:space-x-6 justify-between w-full md:w-fit">
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-[#EE801A]" />
                 <span className="font-medium">+54 381 123-4567</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-[#EE801A]" />
-                <span className="font-medium">info@mudanzasagiles.com</span>
+                <span className="font-medium">info@lamudadora.com</span>
               </div>
             </div>
             <div className="hidden md:block text-gray-300">

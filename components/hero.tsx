@@ -15,7 +15,7 @@ export function Hero() {
       ref={heroRef}
       className="relative h-screen flex items-center justify-center overflow-hidden"
       style={{
-        backgroundImage: "url('/hero-moving-background.png')",
+        backgroundImage: "url('/hero-moving-background.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "fixed",
