@@ -1,35 +1,35 @@
-"use client"
+"use client";
 
-import { motion, useScroll, useTransform } from "framer-motion"
-import { useRef } from "react"
-import { Button } from "@/components/ui/button"
-import { CheckCircle, ArrowRight } from 'lucide-react'
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+import { Button } from "@/components/ui/button";
+import { CheckCircle, ArrowRight } from "lucide-react";
 
 export function Hero() {
-  const heroRef = useRef(null)
-  const { scrollYProgress } = useScroll()
-  const y = useTransform(scrollYProgress, [0, 1], [0, -50])
+  const heroRef = useRef(null);
+  const { scrollYProgress } = useScroll();
+  const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
 
   return (
-    <section 
-      ref={heroRef} 
+    <section
+      ref={heroRef}
       className="relative h-screen flex items-center justify-center overflow-hidden"
       style={{
         backgroundImage: "url('/hero-moving-background.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        backgroundAttachment: "fixed"
+        backgroundAttachment: "fixed",
       }}
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
-      
+
       {/* Floating Elements */}
-      <motion.div 
+      <motion.div
         style={{ y }}
         className="absolute top-20 left-10 w-20 h-20 bg-[#EE801A]/20 rounded-full blur-xl"
       />
-      <motion.div 
+      <motion.div
         style={{ y: useTransform(scrollYProgress, [0, 1], [0, 30]) }}
         className="absolute bottom-20 right-10 w-32 h-32 bg-[#EE801A]/10 rounded-full blur-2xl"
       />
@@ -40,7 +40,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 80 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
@@ -49,7 +49,7 @@ export function Hero() {
             Mudanzas sin{" "}
             <span className="text-[#EE801A] relative">
               estrés
-              <motion.div 
+              <motion.div
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
                 transition={{ duration: 1, delay: 1.5 }}
@@ -57,41 +57,43 @@ export function Hero() {
               />
             </span>
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             initial={{ opacity: 0, y: 60 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
             className="text-xl md:text-3xl font-light mb-8 leading-relaxed max-w-4xl mx-auto"
           >
-            <span className="font-bold">Mudanzas nacionales exclusivas y compartidas.</span>{" "}
+            <span className="font-bold">
+              Mudanzas nacionales exclusivas y compartidas.
+            </span>{" "}
             También locales en toda la provincia de Tucumán.
           </motion.p>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 60 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
             className="flex flex-col sm:flex-row gap-6 justify-center items-center"
           >
-            <Button 
-              size="lg" 
-              className="bg-[#EE801A] hover:bg-[#d6721a] text-white font-bold px-12 py-6 text-xl rounded-full shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-110 group"
+            <Button
+              size="lg"
+              className="bg-[#EE801A] hover:bg-[#d6721a] text-white font-bold px-8 py-6  text-xl rounded-full shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-110 group "
             >
               Solicitá tu presupuesto gratis
               <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
             </Button>
-            
-            <Button 
-              variant="outline" 
+
+            <Button
+              variant="outline"
               size="lg"
-              className="border-2 border-white/80 text-white hover:bg-white hover:text-gray-900 font-bold px-12 py-6 text-xl rounded-full backdrop-blur-sm transition-all duration-500 transform hover:scale-110"
+              className="border-2 border-white/80 text-black hover:bg-white hover:text-gray-900 font-bold px-12 py-6 text-xl rounded-full backdrop-blur-sm transition-all duration-500 transform hover:scale-110"
             >
               Ver cómo funciona
             </Button>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1.2 }}
@@ -112,29 +114,6 @@ export function Hero() {
           </motion.div>
         </motion.div>
       </div>
-
-      {/* Scroll Indicator */}
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white"
-      >
-        <motion.div 
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="flex flex-col items-center"
-        >
-          <span className="text-sm font-semibold mb-2">Descubrí más</span>
-          <div className="w-6 h-10 border-2 border-white/60 rounded-full flex justify-center">
-            <motion.div 
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="w-1 h-3 bg-white/60 rounded-full mt-2"
-            />
-          </div>
-        </motion.div>
-      </motion.div>
     </section>
-  )
+  );
 }

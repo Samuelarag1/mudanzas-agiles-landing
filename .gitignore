@@ -1,2 +1,59 @@
-.node_modules
-.next/
+# Archivo .gitignore para una aplicación Next.js
+
+# Dependencias
+# Ignora la carpeta que contiene todos los paquetes descargados.
+# Se reinstala usando 'npm install', 'yarn install', o 'pnpm install'.
+/node_modules
+
+# Archivos de build y caché de Next.js
+# Estos archivos se generan al construir o ejecutar la aplicación en desarrollo.
+/.next/
+/out/
+
+# Archivos de caché del build
+# Next.js 13.4.19+
+.next/cache
+
+# Archivos de entorno local
+# Nunca subas tus variables de entorno locales al repositorio.
+# Contienen información sensible como claves de API.
+.env.local
+.env.*.local
+
+# Archivos de log
+# Generados por gestores de paquetes en caso de errores.
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Directorios de editores de código
+# Configuraciones específicas del entorno de desarrollo de cada programador.
+.vscode/
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Archivos de sistema operativo
+# Archivos generados automáticamente por macOS y Windows.
+.DS_Store
+Thumbs.db
+
+# Reportes de cobertura de tests
+# Generados al ejecutar las pruebas.
+/coverage
+
+# Archivos de Turbopack (el sucesor experimental de Webpack para Next.js)
+.turbo
+
+# Archivo de configuración de TypeScript generado
+# Se crea automáticamente al iniciar un proyecto con TypeScript.
+tsconfig.tsbuildinfo
+
+# Archivos de caché de ESLint
+.eslintcache
